@@ -1,0 +1,37 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.practice.by.yevhen'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation('org.springframework.boot:spring-boot-starter-web:2.6.1')
+	implementation 'org.springframework.cloud:spring-cloud-stream:3.1.5'
+	implementation 'org.springframework.cloud:spring-cloud-stream-binder-kafka:3.1.5'
+	implementation 'org.springframework.data:spring-data-mongodb:3.3.0'
+	implementation group: 'org.mongodb', name: 'mongo-java-driver', version: '3.12.10'
+	implementation group: 'org.springframework.kafka', name: 'spring-kafka', version: '2.8.0'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '2.6.1'
+	implementation group: 'com.azure', name: 'azure-cosmos', version: '4.22.0'
+	testImplementation "org.testcontainers:azure:1.16.2"
+	testImplementation group: 'org.springframework.kafka', name: 'spring-kafka-test', version: '2.8.0'
+	testImplementation group: 'org.testcontainers', name: 'mongodb', version: '1.16.2'
+	testImplementation group: 'org.testcontainers', name: 'kafka', version: '1.15.3'
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.7.0'
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.0'
+	testImplementation group: 'com.jupiter-tools', name: 'spring-test-kafka', version: '0.2'
+	compileOnly 'org.projectlombok:lombok:1.18.22'
+	annotationProcessor 'org.projectlombok:lombok:1.18.4'
+}
+
+test {
+	useJUnitPlatform()
+}
