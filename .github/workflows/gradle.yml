@@ -33,5 +33,5 @@ jobs:
     - run: chmod +x ./gradlew build
       
     - name: Run test
-      run: ./gradlew test
+      run: ./gradlew test --stacktrace
        
