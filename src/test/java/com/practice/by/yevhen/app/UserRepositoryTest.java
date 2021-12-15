@@ -17,36 +17,36 @@ import org.testcontainers.utility.DockerImageName;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@ContextConfiguration(classes = MongoTestConfig.class)
+// @RunWith(SpringRunner.class)
+// @SpringBootTest
+// @ContextConfiguration(classes = MongoTestConfig.class)
 public class UserRepositoryTest {
 
-    @ClassRule
-    public static final MongoDBContainer MONGO_DB_CONTAINER = new MongoDBContainer(DockerImageName.parse("mongo:4.4.2"));
+//     @ClassRule
+//     public static final MongoDBContainer MONGO_DB_CONTAINER = new MongoDBContainer(DockerImageName.parse("mongo:4.4.2"));
 
-    @DynamicPropertySource
-    static void setProperties(DynamicPropertyRegistry registry) {
-        registry.add("spring.data.mongodb.uri", MONGO_DB_CONTAINER::getReplicaSetUrl);
-    }
+//     @DynamicPropertySource
+//     static void setProperties(DynamicPropertyRegistry registry) {
+//         registry.add("spring.data.mongodb.uri", MONGO_DB_CONTAINER::getReplicaSetUrl);
+//     }
 
-    @Autowired
-    private UserRepository userRepository;
+//     @Autowired
+//     private UserRepository userRepository;
 
-    @Test
-    public void shouldVerifyThatUserWasCreated() {
-        var someId = "someId";
-        var userName = "Petro";
-        var user = User.builder()
-                .name(userName)
-                .id(someId)
-                .build();
+//     @Test
+//     public void shouldVerifyThatUserWasCreated() {
+//         var someId = "someId";
+//         var userName = "Petro";
+//         var user = User.builder()
+//                 .name(userName)
+//                 .id(someId)
+//                 .build();
 
-        userRepository.save(user);
-        var foundedUsers = userRepository.findById(someId);
+//         userRepository.save(user);
+//         var foundedUsers = userRepository.findById(someId);
 
-        assertThat(foundedUsers).isPresent();
-        assertThat(someId).isEqualTo(foundedUsers.get().getId());
-    }
+//         assertThat(foundedUsers).isPresent();
+//         assertThat(someId).isEqualTo(foundedUsers.get().getId());
+//     }
 
 }
