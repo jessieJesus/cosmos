@@ -34,7 +34,7 @@ public class CosmosDBTest {
 
     @ClassRule
     public static CosmosDBEmulatorContainer emulator = new CosmosDBEmulatorContainer(
-            DockerImageName.parse("mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:latest"));
+            DockerImageName.parse("mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator"));
 
     @Rule
     public TemporaryFolder tempFolder = new TemporaryFolder();
