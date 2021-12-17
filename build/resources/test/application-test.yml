@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        test-out-0:
+          destination: test-topic
